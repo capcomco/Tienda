@@ -1,0 +1,57 @@
+h1 {
+    font-size: 40px;
+    font-family: sans-serif;
+    font-weight: bold;
+    text-align: center;
+}
+
+header, nav, section, footer {
+    display: block;
+    padding: 5px;
+}
+
+.agrupar {
+    width: 960px;
+    margin: 15px auto;
+}
+
+.titulo {
+    background: #706fd3;
+}
+.navegacion {
+    background: #474787;
+}
+.navegacion li {
+    list-style: none;
+    padding: 3px 15px;
+    font: bold 14px sans-serif;
+    display: inline-block;
+    text-align: center;
+    
+}
+
+form {
+    width: 450px;
+    margin: auto;
+    background: #ff793f;
+    padding: 10px 20px;
+    box-sizing: border-box;
+    margin-top: 20px;
+    border-radius: 7px;
+    font: bold 20px sans-serif;
+}
+
+input, textarea, select {
+    width: 100%;
+    margin-bottom: 20px;
+    padding: 7px;
+    box-sizing: border-box;
+    border: none;
+}
+
+.piepagina {
+    font: bold 20px sans-serif;
+    text-align: center;
+    background: #706fd3;
+}
+
