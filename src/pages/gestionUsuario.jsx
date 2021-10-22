@@ -2,12 +2,15 @@ import React from 'react'
 
 const gestionUsuario = () => {
     return (
-        <div><center><h2>FORMULARIO DE GESTION DE USUARIOS</h2></center>
-            <br /><br /><br />
-            <center><h2>Listado de usuarios</h2></center>
-
+        <div class="container">
             <div class="container">
+                <center><h1>Formulario de Gestion de Usuarios</h1></center>
+            <br /><br /><br />
+                <center><h2>Listado de usuarios</h2></center></div>
+
+            
                 <table class="table table-success table-striped">
+                     <thead>
                     <tr>
                         <th>Cedula</th>
                         <th>Nombre</th>
@@ -16,6 +19,8 @@ const gestionUsuario = () => {
                         <th>Estado</th>
                         <th></th>
                     </tr>
+                    </thead>
+                    <tbody>
                     <tr>
                         <td>79401078</td>
                         <td>Omar Ricardo Gelves</td>
@@ -126,8 +131,9 @@ const gestionUsuario = () => {
                         </td>
                         <td><button class="button">Actualizar</button></td>
                     </tr>
+                    </tbody>
                 </table>
-            </div>
+            
             <br />
             <div class="container">
                 <button class="mainButton button">Ver lista actualizada</button>

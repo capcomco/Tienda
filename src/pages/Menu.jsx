@@ -2,7 +2,8 @@ import React from 'react';
 
 const Menu = () => {
     return <div><center><h2>Menú de Ingreso</h2></center>
-        <body class="contenedor" >
+        
+        <div class="contenedor" >
                 <div >
             
                     <a href="/admin/productos" class="btn btn-primary">Crear Producto</a>
@@ -15,7 +16,7 @@ const Menu = () => {
                     <a href="/index" class="btn btn-primary">Salir</a>
                 
                 </div>
-            </body>
+            </div>
         </div>
     
 };
