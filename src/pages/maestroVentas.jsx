@@ -1,7 +1,10 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react';
 
 
 const maestroVentas = () => {
+    const [ventas, setVentas] = useState([]);
+
+
     return<div>
             <div class="container">
                 <center><h1>Estados de Venta</h1></center>

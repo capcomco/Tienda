@@ -45,3 +45,16 @@ PUT http://localhost:9000/api/ventas/616cc470db8df7868b402cac HTTP/1.1
     "fecha": "26/07/2021",
     "estado": "estado"    
 }
+
+###
+GET http://localhost:9000/api/ventas
+###
+POST http://localhost:9000/api/product HTTP/1.1
+Content-Type: application/json
+
+    {
+        "id": "0010",
+        "descripcion":"Sudaderas Color Rojo",
+        "valor":150000,
+        "estado":"disponible"
+    }
