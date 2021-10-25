@@ -1,11 +1,16 @@
 import React, { useEffect, useState, useRef } from 'react';
 
 
-const productosBackend = [
+const ventasBackend = [
     {
-        id: 5010,
+        idventa: 5010,
         descripcion: 'Mesa Sala Blanca',
-        precio: '250.000',
+        valor: '250.000',
+        docliente: '',
+
+
+
+
         estado: 'Disponible',
     },
     {
@@ -26,29 +31,24 @@ const productosBackend = [
         precio: '1.500.000',
         estado: 'Disponible',
     },
-    {
-        id: 5050,
-        descripcion: 'Gabinete Cocina Imperial',
-        precio: '700.000',
-        estado: 'Disponible',
-    },
+
 ];
 
-const Productos = () => {
+const Ventas = () => {
     const [mostrarTabla, setMostrarTabla] = useState(true);
-    const [productos, setProductos] = useState([]);
-    const [textoBoton, setTextoBoton] = useState('Crear Nuevo Producto');
+    const [ventas, setVentas] = useState([]);
+    const [textoBoton, setTextoBoton] = useState('Crear Nueva Venta');
     const [colorBoton, setColorBoton] = useState('mainButton');
 
-   useEffect(() => {
-        //obtener lista de productos desde el backend
-        setProductos(productosBackend);
+    useEffect(() => {
+        //obtener lista de ventas desde el backend
+        setVentas(ventasBackend);
     }, []);
 
     useEffect(() => {
         if (mostrarTabla) {
-            setTextoBoton('Mostrar Todos los productos');
-            setColorBoton('secondaryButton');           
+            setTextoBoton('Mostrar Todas los ventas');
+            setColorBoton('secondaryButton');
         } else {
             setTextoBoton('Crear Nuevo Producto');
             setColorBoton('mainButton');
@@ -57,7 +57,7 @@ const Productos = () => {
     return (
         <div >
             <div className="container">
-                
+
                 <button
                     onClick={() => {
                         setMostrarTabla(!mostrarTabla);
@@ -68,27 +68,27 @@ const Productos = () => {
                 </button>
             </div>
             {mostrarTabla ? (
-                <FormularioCreacionProductos
+                <FormularioCreacionVentas
                     setMostrarTabla={setMostrarTabla}
-                    listaProductos={productos}
-                    setProductos={setProductos}
-                />               
+                    listaVentas={ventas}
+                    setVentas={setVentas}
+                />
             ) : (
-                    <TablaProductos listaProductos={productos} />
+                <TablaVentas listaVentas={ventas} />
             )}
 
         </div>
     );
 };
 
-const TablaProductos = ({ listaProductos }) => {
+const TablaVentas = ({ listaVentas }) => {
     useEffect(() => {
-        console.log('este es el listado de productos en el componente de tabla', listaProductos);
-    }, [listaProductos]);
+        console.log('este es el listado de ventas en el componente de tabla', listaVentas);
+    }, [listaVentas]);
     return (
         <div >
             <div class="container">
-                <center><h1>Listado de Productos</h1></center>
+                <center><h1>Listado de Ventas</h1></center>
             </div>
             <div class="container">
                 <form action="">
@@ -108,52 +108,52 @@ const TablaProductos = ({ listaProductos }) => {
             </div>
 
             <div class="container">
-            <table class="table table-success table-striped">
-                <thead>
-                    <tr>
-                        <th>ID</th>
-                        <th>Descripción</th>
-                        <th>Precio U</th>
-                        <th>Estado</th>
-                        <th></th>
-                    </tr>
-                </thead>
-                <tbody>
-                    {listaProductos.map((producto) => {
-                        return (
-                            
+                <table class="table table-success table-striped">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Descripción</th>
+                            <th>Precio U</th>
+                            <th>Estado</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {listaVentas.map((venta) => {
+                            return (
 
 
-                            <tr>                            
-                                <td>{producto.id}</td>
-                                <td>{producto.descripcion}</td>
-                                <td>{producto.precio}</td>
-                                <td><select
-                                    className='bg-gray-50 border border-gray-600 p-2 rounded-lg m-2'
-                                    name='estado'
-                                    required
-                                    defaultValue={0}
-                                >
-                                    <option disabled value={0}>
-                                        Seleccione una opción
-                                    </option>
-                                    <option>Disponible</option>
-                                    <option>No disponible</option>
 
-                                </select></td>
-                                <td><button>Actualizar</button></td>
-                            </tr>
-                            
-                        );
-                    })}
-                </tbody>
+                                <tr>
+                                    <td>{venta.id}</td>
+                                    <td>{venta.descripcion}</td>
+                                    <td>{venta.precio}</td>
+                                    <td><select
+                                        className='bg-gray-50 border border-gray-600 p-2 rounded-lg m-2'
+                                        name='estado'
+                                        required
+                                        defaultValue={0}
+                                    >
+                                        <option disabled value={0}>
+                                            Seleccione una opción
+                                        </option>
+                                        <option>Disponible</option>
+                                        <option>No disponible</option>
+
+                                    </select></td>
+                                    <td><button>Actualizar</button></td>
+                                </tr>
+
+                            );
+                        })}
+                    </tbody>
                 </table>
             </div>
         </div>
     );
 };
 
-const FormularioCreacionProductos = ({ setMostrarTabla, listaProductos, setProductos }) => {
+const FormularioCreacionVentas = ({ setMostrarTabla, listaVentas, setVentas }) => {
     const form = useRef(null);
 
     const submitForm = (e) => {
@@ -166,13 +166,13 @@ const FormularioCreacionProductos = ({ setMostrarTabla, listaProductos, setProdu
         });
 
         setMostrarTabla(true);
-        setProductos([...listaProductos, nuevoProducto]);
-        
+        setVentas([...listaVentas, nuevoProducto]);
+
     };
 
     return (
         <div><br /><br />
-            <h2 >Crear nuevo producto</h2>
+            <h2 >Crear nuevo venta</h2>
             <form ref={form} onSubmit={submitForm} ><br /><br />
                 <label className='flex flex-col' htmlFor='nombre'>
                     <h5 className='container'>ID del producto</h5>
@@ -226,11 +226,11 @@ const FormularioCreacionProductos = ({ setMostrarTabla, listaProductos, setProdu
                     type='submit'
                     className='mainButton'
                 >
-                    Guardar producto
+                    Guardar venta
                 </button>
             </form>
         </div>
     );
 };
 
-export default Productos;
+export default Ventas;
