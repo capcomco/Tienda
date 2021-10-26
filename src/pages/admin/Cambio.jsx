@@ -3,33 +3,36 @@ import React, { useEffect, useState, useRef } from 'react';
 
 const ventasBackend = [
     {
-        idventa: 5010,
-        descripcion: 'Mesa Sala Blanca',
-        valor: '250.000',
-        docliente: '',
-
-
-
-
-        estado: 'Disponible',
+        idventa: 1010,
+        descripcion: 'Mercancía Primera Calidad',
+        valor: '100.000',
+        docliente: '52.021.634',
+        nomcliente: 'Juan Torres',
+        fecha: '05/02/2021',
     },
     {
-        id: 5020,
-        descripcion: 'Biblioteca 2 X 1',
-        precio: '500.000',
-        estado: 'Disponible',
+        idventa: 1020,
+        descripcion: 'Mercancía Uno',
+        valor: '100.000',
+        docliente: '52.021.634',
+        nomcliente: 'Patricia Fuentes',
+        fecha: '15/02/2021',
     },
     {
-        id: 5030,
-        descripcion: 'sofa estelar',
-        precio: '1.000.000',
-        estado: 'No disponible',
+        idventa: 1030,
+        descripcion: 'Mercancía Dos',
+        valor: '100.000',
+        docliente: '52.021.634',
+        nomcliente: 'Valentin Sierra',
+        fecha: '07/03/2021',
     },
     {
-        id: 5040,
-        descripcion: 'Silla Otomana Blanca',
-        precio: '1.500.000',
-        estado: 'Disponible',
+        idventa: 1040,
+        descripcion: 'Mercancía Tres',
+        valor: '100.000',
+        docliente: '52.021.634',
+        nomcliente: 'Juan Torres',
+        fecha: '08/08/2021',
     },
 
 ];
@@ -114,6 +117,9 @@ const TablaVentas = ({ listaVentas }) => {
                             <th>ID</th>
                             <th>Descripción</th>
                             <th>Precio U</th>
+                            <th>Doc Cliente</th>
+                            <th>Cliente</th>
+                            <th>Fecha</th>
                             <th>Estado</th>
                             <th></th>
                         </tr>

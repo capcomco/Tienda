@@ -165,7 +165,7 @@ const FormularioCreacionProductos = ({ setMostrarTabla, listaProductos, setProdu
             nuevoProducto[key] = value;
         });
 
-        setMostrarTabla(true);
+        setMostrarTabla(false);
         setProductos([...listaProductos, nuevoProducto]);
         
     };
@@ -173,7 +173,7 @@ const FormularioCreacionProductos = ({ setMostrarTabla, listaProductos, setProdu
     return (
         <div><br /><br />
             <h2 >Crear nuevo producto</h2>
-            <form ref={form} onSubmit={submitForm} ><br /><br />
+            <form className='formProducto' ref={form} onSubmit={submitForm} ><br /><br />
                 <label className='flex flex-col' htmlFor='nombre'>
                     <h5 className='container'>ID del producto</h5>
                     <input
@@ -187,12 +187,14 @@ const FormularioCreacionProductos = ({ setMostrarTabla, listaProductos, setProdu
                 <label className='flex flex-col' htmlFor='nombre'>
                     <h5 className='container'>Descripcion</h5>
                     <input
-                        name='descripcion'
+                    
+                        name='descripcion'                      
                         className='bg-gray-50 border border-gray-600 p-2 rounded-lg m-2'
                         type='text'
                         placeholder='Descripcion'
                         required
-                    />
+                        />
+                    
                 </label>
                 <label className='flex flex-col' htmlFor='nombre'>
                     <h5 className='container'>Precio</h5>
